@@ -1,0 +1,59 @@
+<!doctype html>
+<html ng-app="lemonsterdemo">
+  <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lemonster</title>
+  <link rel="shortcut icon" href="visual/images/favicon.png" />
+
+  <!-- build:css visual/styles/app.min.css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"></link>
+  <!-- endbuild -->
+
+
+  <!-- build:js app.min.js -->
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+  <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+
+  <script type="text/javascript" src="../lemonster.js"></script>
+  <!-- endbuild -->
+
+  <script type="text/javascript">
+
+  angular.module("lemonsterdemo", ["lemonster"])
+    .controller( "lemonsterdemo.controllers.main", ["$scope", "$location", "$http",function($scope, $location, $http){
+      $scope.$watch(function(){
+        return $location.path();
+      }, function(path){
+        if(path == ""){
+          $location.path("/descriptors/index.json");
+        }else{
+          path = path.substring(1);
+          $http.get(path)
+            .then(function(response){
+                $scope.descriptor = response.data;
+            })
+        }
+      })
+
+      $scope.formattedJSON = function(){
+        return JSON.stringify($scope.descriptor, null, '\t')
+      }
+
+
+    }]);
+
+  </script>
+
+  </head>
+  <body ng-controller="lemonsterdemo.controllers.main">
+    
+    <div lm-parser="descriptor"></div>
+    
+    <pre>
+      {{ formattedJSON() }}
+    </pre>
+  </body>
+</html>

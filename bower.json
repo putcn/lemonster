@@ -1,0 +1,32 @@
+{
+  "name": "lemonster",
+  "version": "0.0.1",
+  "homepage": "https://github.com/putcn/lemonster",
+  "authors": [
+    "xichen <putcncx@gmail.com>"
+  ],
+  "description": "A dynamic web application UI Framework based on Angularjs",
+  "main": "dist/lemonster.js",
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "lemonster",
+    "angularjs",
+    "dynamic",
+    "UI",
+    "framework"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.2.22",
+    "jquery": "~2.1.1"
+  }
+}

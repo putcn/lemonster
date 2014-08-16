@@ -1,0 +1,31 @@
+{
+  "name": "lemonster",
+  "version": "0.0.1",
+  "description": "A dynamic web application UI Framework based on Angularjs",
+  "devDependencies": {
+    "fs.extra" : "~1.2.1",
+    "grunt-contrib-copy" : "~0.5.0",
+    "time-grunt" : "0.4.0"
+  },
+  "main": "dist/lemonster.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/putcn/lemonster.git"
+  },
+  "keywords": [
+    "lemonster",
+    "angularjs",
+    "dynamic",
+    "UI",
+    "framework"
+  ],
+  "author": "xichen <putcncx@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/putcn/lemonster/issues"
+  },
+  "homepage": "https://github.com/putcn/lemonster"
+}
